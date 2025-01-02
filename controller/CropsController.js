@@ -19,7 +19,7 @@ export async function getCropsData(req, res) {
                         (err, rows) => {
                             connection.close();
                             if(err){
-                                console.log("Error in selecting coloumns in controller", err);
+                                console.log("Error in selecting coloumns in all crops controller", err);
                                 return reject(err);
                             }
                             resolve(rows);
