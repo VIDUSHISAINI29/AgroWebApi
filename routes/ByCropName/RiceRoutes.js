@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getRiceData } from "../../controller/RiceController.js";
+import { getRiceData } from "../../controller/CropsWise/RiceController.js";
 
 const router = Router();
 router.get('/', getRiceData);
