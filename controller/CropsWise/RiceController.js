@@ -7,7 +7,7 @@ export async function getRiceData(req, res) {
         const rows = await new Promise((resolve, reject) => {
             const connection = db.connect();
             connection.run(
-                "CREATE TABLE IF NOT EXISTS Rice_Data AS SELECT * FROM read_parquet('ParquetFiles/CropsWise/RiceData.parquet')",
+                "CREATE TABLE IF NOT EXISTS Rice_Data AS SELECT * FROM read_parquet('ParquetFiles/CropWise/RiceData.parquet')",
                 (err) => {
                     if(err){
                         console.log("Error in reading parquet for rice data",err);

@@ -7,7 +7,7 @@ export async function getSoybeanData(req, res) {
         const rows = await new Promise((resolve, reject) => {
             const connection = db.connect();
             connection.run(
-                "CREATE TABLE IF NOT EXISTS Soybean_Data AS SELECT * FROM read_parquet('ParquetFiles/CropsWise/SoybeanData.parquet')",
+                "CREATE TABLE IF NOT EXISTS Soybean_Data AS SELECT * FROM read_parquet('ParquetFiles/CropWise/SoybeanData.parquet')",
                 (err) => {
                     if(err){
                         console.log("Error in reading parquet for Soybean data",err);
