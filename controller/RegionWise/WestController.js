@@ -14,7 +14,7 @@ export async function getWestData(req, res) {
                         return reject(err);
                     }
                     connection.all(
-                        `SELECT CAST(cd."Region" AS TEXT) AS region, CAST(cd."Soil_Type" AS TEXT) AS soilType, CAST(cd."Crop" AS TEXT) AS crop, CAST(cd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(cd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(cd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(cd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(cd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(cd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(cd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(cd."images" AS TEXT) AS image from WestData cd
+                        `SELECT CAST(wd."Index" AS TEXT) AS index, CAST(wd."Region" AS TEXT) AS region, CAST(wd."Soil_Type" AS TEXT) AS soilType, CAST(wd."Crop" AS TEXT) AS crop, CAST(wd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(wd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(wd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(wd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(wd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(wd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(wd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(wd."images" AS TEXT) AS image from WestData wd
                         LIMIT 10`,
                         (err, rows) => {
                             connection.close();

@@ -14,7 +14,7 @@ export async function getEastData(req, res) {
                         return reject(err);
                     }
                     connection.all(
-                        `SELECT CAST(cd."Region" AS TEXT) AS region, CAST(cd."Soil_Type" AS TEXT) AS soilType, CAST(cd."Crop" AS TEXT) AS crop, CAST(cd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(cd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(cd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(cd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(cd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(cd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(cd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(cd."images" AS TEXT) AS image from EastData cd
+                        `SELECT CAST(ed."Index" AS TEXT) AS index, CAST(ed."Region" AS TEXT) AS region, CAST(ed."Soil_Type" AS TEXT) AS soilType, CAST(ed."Crop" AS TEXT) AS crop, CAST(ed."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(ed."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(ed."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(ed."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(ed."Weather_Condition" AS TEXT) AS weatherCondition, CAST(ed."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(ed."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(ed."images" AS TEXT) AS image from EastData ed
                         LIMIT 10`,
                         (err, rows) => {
                             connection.close();

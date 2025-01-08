@@ -14,7 +14,7 @@ export async function getClaySoilData(req, res) {
                         return reject(err);
                     }
                     connection.all(
-                        `SELECT CAST(sd."Region" AS TEXT) AS region, CAST(sd."Soil_Type" AS TEXT) AS soilType, CAST(sd."Crop" AS TEXT) AS crop, CAST(sd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(sd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(sd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(sd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(sd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(sd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(sd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(sd."images" AS TEXT) AS image from ClaySoilData sd
+                        `SELECT CAST(cd."Index" AS TEXT) AS index, CAST(cd."Region" AS TEXT) AS region, CAST(cd."Soil_Type" AS TEXT) AS soilType, CAST(cd."Crop" AS TEXT) AS crop, CAST(cd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(cd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(cd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(cd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(cd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(cd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(cd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(cd."images" AS TEXT) AS image from ClaySoilData cd
                         LIMIT 30`,
                         (err, rows) => {
                             connection.close();

@@ -14,7 +14,7 @@ export async function getSiltSoilData(req, res) {
                         return reject(err);
                     }
                     connection.all(
-                        `SELECT CAST(sd."Region" AS TEXT) AS region, CAST(sd."Soil_Type" AS TEXT) AS soilType, CAST(sd."Crop" AS TEXT) AS crop, CAST(sd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(sd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(sd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(sd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(sd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(sd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(sd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(sd."images" AS TEXT) AS image from SiltSoilData sd
+                        `SELECT CAST(sd."Index" AS TEXT) AS index, CAST(sd."Region" AS TEXT) AS region, CAST(sd."Soil_Type" AS TEXT) AS soilType, CAST(sd."Crop" AS TEXT) AS crop, CAST(sd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(sd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(sd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(sd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(sd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(sd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(sd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(sd."images" AS TEXT) AS image from SiltSoilData sd
                         LIMIT 30`,
                         (err, rows) => {
                             connection.close();

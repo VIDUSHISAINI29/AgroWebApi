@@ -14,7 +14,7 @@ export async function getRiceData(req, res) {
                         return reject(err);
                     }
                     connection.all(
-                        `SELECT CAST(rd."Region" AS TEXT) AS region, CAST(rd."Soil_Type" AS TEXT) AS soilType, CAST(rd."Crop" AS TEXT) AS crop, CAST(rd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(rd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(rd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(rd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(rd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(rd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(rd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(rd."images" AS TEXT) AS image from Rice_Data rd
+                        `SELECT CAST(rd."Index" AS TEXT) AS index, CAST(rd."Region" AS TEXT) AS region, CAST(rd."Soil_Type" AS TEXT) AS soilType, CAST(rd."Crop" AS TEXT) AS crop, CAST(rd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(rd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(rd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(rd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(rd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(rd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(rd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(rd."images" AS TEXT) AS image from Rice_Data rd
                         LIMIT 10`,
                         (err, rows) => 
                         {

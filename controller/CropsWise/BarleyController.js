@@ -14,7 +14,7 @@ export async function getBarleyData(req, res) {
                         return reject(err);
                     }
                     connection.all(
-                        `SELECT CAST(bd."Region" AS TEXT) AS region, CAST(bd."Soil_Type" AS TEXT) AS soilType, CAST(bd."Crop" AS TEXT) AS crop, CAST(bd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(bd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(bd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(bd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(bd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(bd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(bd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(bd."images" AS TEXT) AS image from Barley_Data bd
+                        `SELECT CAST(bd."Index" AS TEXT) AS index, CAST(bd."Region" AS TEXT) AS region, CAST(bd."Soil_Type" AS TEXT) AS soilType, CAST(bd."Crop" AS TEXT) AS crop, CAST(bd."Rainfall_mm" AS TEXT) AS ranfallMM, CAST(bd."Temperature_Celsius" AS TEXT) AS tempratureCelsius, CAST(bd."Fertilizer_Used" AS TEXT) AS fertilizeUsed, CAST(bd."Irrigation_Used" AS TEXT) AS irrigationUsed, CAST(bd."Weather_Condition" AS TEXT) AS weatherCondition, CAST(bd."Days_To_Harvest" AS TEXT) AS daysToHarvest, CAST(bd."Yield_tons_per_hectare" AS TEXT) AS yieldTonsPerHectare,  CAST(bd."images" AS TEXT) AS image from Barley_Data bd
                         LIMIT 10`,
                         (err, rows) => 
                         {
